@@ -11,7 +11,7 @@ function wordReverser (wordToReverse){
 window.addEventListener('load', function(){
     const userWord = prompt(`Pick a word to reverse`);
     const reversedUserWord = wordReverser(userWord);
-    let resultSpace = document.getElementById('result');
+    let resultSpace = document.getElementById('exercise-1');
     resultSpace.innerText = `The reversed word is ${reversedUserWord}`;
 });
 */
@@ -38,7 +38,7 @@ window.addEventListener('load', function(){
         stringNumber = prompt('How many strings do you want to concatenate?');
     }*
     concatenatedStrings = stringChain (stringArray, stringNumber);
-    let resultSpace = document.getElementById('result');
+    let resultSpace = document.getElementById('exercise-2');
     resultSpace.innerText = `The concatenated string is '${concatenatedStrings}'`;
 });
 */
@@ -57,13 +57,13 @@ window.addEventListener('load', function(){
         let doubledNumber = doubler(userNumber);
         numbers [i] = doubledNumber;
     }
-    let resultSpace = document.getElementById('result');
+    let resultSpace = document.getElementById('exercise-3');
     resultSpace.innerText = `The doubled numbers are ${numbers}`;
 });
 */
 
 // Exercise 4
-
+/*
 function upperOrLower (val, string){
     if (val === 0){
         return string.toLowerCase();
@@ -81,9 +81,9 @@ window.addEventListener('load', function(){
         alphabetLetter = upperOrLower(value, alphabetLetter);
         randomAlphabet[i] = alphabetLetter;
     }
-    let resultSpace = document.getElementById('result');
+    let resultSpace = document.getElementById('exercise-4');
     resultSpace.innerText = `The random alphabet is ${randomAlphabet}`;
 });
-
+*/
 // Exercise 5
 
