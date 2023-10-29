@@ -33,7 +33,7 @@ window.addEventListener('load', function(){
     let stringArray = ['Hello,', ' today is', ' a good', ' day.', ' How are you?', ' Do you like M-', ' Mysteries?', ' Do you want to', ' play a game with me?'];
     let concatenatedStrings = '';
     const stringNumber = Number(prompt('How many strings do you want to concatenate?'));
-    /* while (0 > stringNumber || stringNumber > stringArray.length || isNaN(stringNumber)){
+    /* if (0 > stringNumber || stringNumber > stringArray.length || isNaN(stringNumber)){
         alert('Pick another number');
         stringNumber = prompt('How many strings do you want to concatenate?');
     }*
@@ -44,7 +44,7 @@ window.addEventListener('load', function(){
 */
 
 // Exercise 3
-
+/*
 function doubler (number){
     let double = number*2;
     return double;
@@ -60,3 +60,30 @@ window.addEventListener('load', function(){
     let resultSpace = document.getElementById('result');
     resultSpace.innerText = `The doubled numbers are ${numbers}`;
 });
+*/
+
+// Exercise 4
+
+function upperOrLower (val, string){
+    if (val === 0){
+        return string.toLowerCase();
+    } else if (val === 1) {
+        return string.toUpperCase();
+    }
+}
+
+window.addEventListener('load', function(){
+    let randomAlphabet = [];
+    let alphabetString = 'abcdefghijklmnopqrstuvwxyz';
+    for (let i = 0; i < alphabetString.length; i++){
+        let value = Math.floor(Math.random()*(1-0+1)+0);
+        let alphabetLetter = alphabetString[i];
+        alphabetLetter = upperOrLower(value, alphabetLetter);
+        randomAlphabet[i] = alphabetLetter;
+    }
+    let resultSpace = document.getElementById('result');
+    resultSpace.innerText = `The random alphabet is ${randomAlphabet}`;
+});
+
+// Exercise 5
+
