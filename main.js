@@ -15,8 +15,9 @@ window.addEventListener('load', function(){
     resultSpace.innerText = `The reversed word is ${reversedUserWord}`;
 });
 */
-// Exercise 2
 
+// Exercise 2
+/*
 function stringChain (array, numberOfStrings){
     let chain = '';
     for (let i = 0; i < array.length; i++){
@@ -34,11 +35,28 @@ window.addEventListener('load', function(){
     const stringNumber = Number(prompt('How many strings do you want to concatenate?'));
     /* while (0 > stringNumber || stringNumber > stringArray.length || isNaN(stringNumber)){
         alert('Pick another number');
-        prompt('How many strings do you want to concatenate?');
-    }*/
+        stringNumber = prompt('How many strings do you want to concatenate?');
+    }*
     concatenatedStrings = stringChain (stringArray, stringNumber);
     let resultSpace = document.getElementById('result');
     resultSpace.innerText = `The concatenated string is '${concatenatedStrings}'`;
 });
+*/
 
+// Exercise 3
 
+function doubler (number){
+    let double = number*2;
+    return double;
+}
+
+window.addEventListener('load', function(){
+    let numbers = [];
+    for (let i = 0; i < 10; i++){
+        const userNumber = Number(prompt(`Choose 10 numbers - number ${i+1}`));
+        let doubledNumber = doubler(userNumber);
+        numbers [i] = doubledNumber;
+    }
+    let resultSpace = document.getElementById('result');
+    resultSpace.innerText = `The doubled numbers are ${numbers}`;
+});
