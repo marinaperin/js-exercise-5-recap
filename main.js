@@ -86,7 +86,7 @@ window.addEventListener('load', function(){
 });
 */
 // Exercise 5
-
+/*
 function coinThrower (){
     let val = Math.floor(Math.random()*(1-0+1)+0);
     if (val === 0){
@@ -129,3 +129,30 @@ window.addEventListener('load', function(){
     let resultSpace = document.getElementById('exercise-5');
     resultSpace.innerText = `The result of this match is ${result}`;
 });
+*/
+
+// Exercise 6 
+/*
+function diceThrower (){
+    let val = Math.floor(Math.random()* 6) + 1;
+    return val;
+}
+
+window.addEventListener('load', function(){
+    let botThrow = diceThrower();
+    let userThrow = diceThrower();
+    let winner = '';
+    if (botThrow > userThrow){
+        winner = 'the bot!';
+    }else if (userThrow > botThrow){
+        winner = 'you!';
+    }else if (userThrow === botThrow){
+        winner = `no one. It's a tie!`;
+    }
+    let resultSpace = document.getElementById('exercise-5');
+    resultSpace.innerText = `The bot throw is ${botThrow} and the player throw is ${userThrow}. The winner is... ${winner}`;
+});
+*/
+
+// Exercise 7
+
