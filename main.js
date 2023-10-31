@@ -156,3 +156,32 @@ window.addEventListener('load', function(){
 
 // Exercise 7
 
+function rouletteThrower (){
+    let val = Math.floor(Math.random()* 37);
+    return val;
+}
+
+window.addEventListener('load', function(){
+    let userBet = (prompt('Do you want to bet on a number or even/odd?'));
+    if (userBet !== 'even/odd' && userBet !== 'number'){
+        alert('Invalid bet');
+        userBet = prompt('Do you want to bet on a number or even/odd?');
+    }else if (userBet === 'number'){
+        userBet = prompt('Which number?');
+    }else if ( userBet === 'even/odd'){
+        userBet = prompt('Even or Odd?');
+    }
+    let betResult = rouletteThrower();
+    let betWinner = '';
+    if (betResult % 2 === 0 && userBet === 'Even' || userBet === 'even'){
+        betWinner = 'You won!';
+    }else if (betResult === userBet){
+        betWinner = 'You won!';
+    }else if (betResult % 2 !== 0 && userBet === 'Odd' || userBet === 'odd'){
+        betWinner = `You won!`;
+    }else {
+        betWinner = 'You lost!'
+    }
+    let resultSpace = document.getElementById('exercise-6');
+    resultSpace.innerText = `You played ${userBet}, the result is ${betResult}. ${betWinner}`;
+});
