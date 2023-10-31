@@ -206,7 +206,7 @@ window.addEventListener('load', function(){
 */
 
 // Exercise 9
-
+/*
 let zooAnimals = ['monkey', 'elephant', 'giraffe', 'capybara', 'lion', 'leopard', 'cheetah', 'lynx', 'wolf', 'fox', 'red panda', 'tiger', 'meerkat', 'kangaroo', 'koala', 'alpaca', 'dolphin', 'parrot', 'seal', 'owl'];
 
 function whichAnimalsAreThere (animal){
@@ -224,9 +224,38 @@ function whichAnimalsAreThere (animal){
 window.addEventListener('load', function(){
     let userAnimal = (prompt('Which animal do you want to see in the zoo?')).toLowerCase();
     let animalYesOrNo = whichAnimalsAreThere (userAnimal);
-    console.log(userAnimal, animalYesOrNo);
     let resultSpace = document.getElementById('exercise-9');
     resultSpace.innerText = `${animalYesOrNo}`;
 });
+*/
 
+// Exercise 10
 
+function lowerToHigher (array){
+    let i = 0, j;
+        while (i < array.length){
+            j = i + 1;
+            while (j < array.length){
+                if (array[j] < array[i]){
+                    let number = array[i];
+                    array[i] = array[j];
+                    array[j] = number;
+                }
+                j++;
+            }
+            i++;
+        } 
+    return array;
+}
+
+window.addEventListener('load', function(){
+    let numbersCount = Number(prompt('How many numbers do you want to pick?'));
+    let numbersArray = [];
+    for (let i = 0; i < numbersCount; i++){
+        pickedNumbers = Number(prompt(`Choose a number - number ${i + 1}`));
+        numbersArray.push(pickedNumbers);
+    }
+    let sortedNumbersArray = lowerToHigher(numbersArray);
+    let resultSpace = document.getElementById('exercise-10');
+    resultSpace.innerText = `The numbers in ascending order are ${sortedNumbersArray}`;
+})
