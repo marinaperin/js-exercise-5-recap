@@ -96,7 +96,7 @@ function coinThrower (){
     }
 }
 
-window.addEventListener('load', function(){
+window.addEventListener('load', function coinThrowerGame(){
     let throwNumber = Number(prompt('How many times do you want to throw the coin?'));
     if (isNaN(throwNumber)){
         alert('Invalid value');
@@ -116,7 +116,6 @@ window.addEventListener('load', function(){
         }else {
             totalUserLosses+=1;
         }
-        console.log(throwResult, totalUserWins, totalUserLosses);
     }
     let result = '';
     if (totalUserWins > totalUserLosses){
@@ -138,7 +137,7 @@ function diceThrower (){
     return val;
 }
 
-window.addEventListener('load', function(){
+window.addEventListener('load', function diceThrowerGame(){
     let botThrow = diceThrower();
     let userThrow = diceThrower();
     let winner = '';
@@ -149,19 +148,19 @@ window.addEventListener('load', function(){
     }else if (userThrow === botThrow){
         winner = `no one. It's a tie!`;
     }
-    let resultSpace = document.getElementById('exercise-5');
+    let resultSpace = document.getElementById('exercise-6');
     resultSpace.innerText = `The bot throw is ${botThrow} and the player throw is ${userThrow}. The winner is... ${winner}`;
 });
 */
 
 // Exercise 7
-
+/*
 function rouletteThrower (){
     let val = Math.floor(Math.random()* 37);
     return val;
 }
 
-window.addEventListener('load', function(){
+window.addEventListener('load', function rouletteThrowerGame(){
     let userBet = (prompt('Do you want to bet on a number or even/odd?'));
     if (userBet !== 'even/odd' && userBet !== 'number'){
         alert('Invalid bet');
@@ -182,6 +181,25 @@ window.addEventListener('load', function(){
     }else {
         betWinner = 'You lost!'
     }
-    let resultSpace = document.getElementById('exercise-6');
+    let resultSpace = document.getElementById('exercise-7');
     resultSpace.innerText = `You played ${userBet}, the result is ${betResult}. ${betWinner}`;
+});
+*/
+
+// Exercise 8 
+
+window.addEventListener('load', function(){
+    let gameChoice = prompt('Which game do you want to play? Coin, Dice or Roulette?');
+    if (gameChoice !== 'Coin' && gameChoice !== 'Dice' && gameChoice !== 'Roulette'){
+        alert('Invalid choice');
+        gameChoice = prompt('Which game do you want to play? Coin, Dice or Roulette?');
+    }else if (gameChoice === 'Coin'){
+        coinThrower();
+    }else if (gameChoice === 'Dice'){
+        diceThrower();
+    }else if (gameChoice === 'Roulette'){
+        rouletteThrower();
+    }
+    let resultSpace = document.getElementById('exercise-8');
+        resultSpace.innerText = `You played`;
 });
