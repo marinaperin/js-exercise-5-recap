@@ -187,7 +187,7 @@ window.addEventListener('load', function rouletteThrowerGame(){
 */
 
 // Exercise 8 
-
+/*
 window.addEventListener('load', function(){
     let gameChoice = prompt('Which game do you want to play? Coin, Dice or Roulette?');
     if (gameChoice !== 'Coin' && gameChoice !== 'Dice' && gameChoice !== 'Roulette'){
@@ -201,5 +201,32 @@ window.addEventListener('load', function(){
         rouletteThrower();
     }
     let resultSpace = document.getElementById('exercise-8');
-        resultSpace.innerText = `You played`;
+    resultSpace.innerText = `You played`;
 });
+*/
+
+// Exercise 9
+
+let zooAnimals = ['monkey', 'elephant', 'giraffe', 'capybara', 'lion', 'leopard', 'cheetah', 'lynx', 'wolf', 'fox', 'red panda', 'tiger', 'meerkat', 'kangaroo', 'koala', 'alpaca', 'dolphin', 'parrot', 'seal', 'owl'];
+
+function whichAnimalsAreThere (animal){
+    let isThere = '';
+    for (let i = 0; i < zooAnimals.length; i++){
+        if (animal === zooAnimals[i]){
+            isThere = 'You can find this animal here';
+            break;
+        }else {
+            isThere = `Sorry, you can't find this animal here`;
+        }
+    } return isThere;
+}
+
+window.addEventListener('load', function(){
+    let userAnimal = (prompt('Which animal do you want to see in the zoo?')).toLowerCase();
+    let animalYesOrNo = whichAnimalsAreThere (userAnimal);
+    console.log(userAnimal, animalYesOrNo);
+    let resultSpace = document.getElementById('exercise-9');
+    resultSpace.innerText = `${animalYesOrNo}`;
+});
+
+
