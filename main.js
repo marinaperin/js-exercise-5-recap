@@ -87,3 +87,45 @@ window.addEventListener('load', function(){
 */
 // Exercise 5
 
+function coinThrower (){
+    let val = Math.floor(Math.random()*(1-0+1)+0);
+    if (val === 0){
+        return `Head`;
+    }else if (val === 1){
+        return `Tail`;
+    }
+}
+
+window.addEventListener('load', function(){
+    let throwNumber = Number(prompt('How many times do you want to throw the coin?'));
+    if (isNaN(throwNumber)){
+        alert('Invalid value');
+        throwNumber = prompt('How many times do you want to throw the coin?');
+    }
+    let totalUserWins = 0;
+    let totalUserLosses = 0;
+    for (let i = 0; i < throwNumber; i++){
+        let userGuess = prompt('Head or Tail?');
+        if (userGuess !== 'Head' && userGuess !== 'Tail'){
+            alert('Invalid choice');
+            userGuess = prompt('Head or Tail?');
+        }
+        let throwResult = coinThrower();
+        if (throwResult === userGuess){
+            totalUserWins+=1;
+        }else {
+            totalUserLosses+=1;
+        }
+        console.log(throwResult, totalUserWins, totalUserLosses);
+    }
+    let result = '';
+    if (totalUserWins > totalUserLosses){
+        result = 'You won!';
+    }else if (totalUserLosses > totalUserWins){
+        result = 'You lost!';
+    }else if (totalUserLosses === totalUserWins){
+        result = 'You tie!';
+    }
+    let resultSpace = document.getElementById('exercise-5');
+    resultSpace.innerText = `The result of this match is ${result}`;
+});
